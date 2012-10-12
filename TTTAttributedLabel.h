@@ -63,7 +63,7 @@ extern NSString * const kTTTStrikeOutAttributeName;
     CTFramesetterRef _framesetter;
     BOOL _needsFramesetter;
     
-    __weak id _delegate;
+    __unsafe_unretained id _delegate;
     UIDataDetectorTypes _dataDetectorTypes;
     NSDataDetector *_dataDetector;
     NSArray *_links;
@@ -89,7 +89,7 @@ extern NSString * const kTTTStrikeOutAttributeName;
  
  @discussion A `TTTAttributedLabel` delegate responds to messages sent by tapping on links in the label. You can use the delegate to respond to links referencing a URL, address, phone number, date, or date with a specified time zone and duration.
  */
-@property (nonatomic, weak) id <TTTAttributedLabelDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <TTTAttributedLabelDelegate> delegate;
 
 ///--------------------------------------------
 /// @name Detecting, Accessing, & Styling Links
